@@ -9,6 +9,7 @@ var input_lenght; // Input Length
 var input_arr_pos = 0; // Aktuelle Position im Array
 var p;
 var finish = '';
+ var pruef_flag = false;
 
 $('#button').click(function() {
 
@@ -18,6 +19,7 @@ $('#button').click(function() {
     input_arr_pos = 0; // Aktuelle Position im Array
     p;
     finish = '';
+    pruef_flag = false;
 
     var input = $('#input').val().toUpperCase(); // Input to var and Uppercase
 
@@ -25,13 +27,17 @@ $('#button').click(function() {
     input_lenght = input_arr.length; // Input length
 
     check(input_arr);
+    if(pruef_flag == false){
+        finish = finish + "<div class='license_plate red'>" + "<div class='country'><i class='fa fa-car' aria-hidden='true' /><div class='country_code'>DE</div></div>" + "<div class='left'>" + 'XX' + "</div><div class='middle'>" + 'XX' + "</div><div class='right'> " + 9286 + "</div></div>";
+        $('#output').html(finish);
+    }
 
 });
 
 function check(input_arr) {
 
     var pruef = '';
-
+  
 
     var pruef_size = 3; // Anfangslänge der Zennzeichenprüfung
 
@@ -48,7 +54,6 @@ function check(input_arr) {
                     createZennzeichen(pruef);
                 }
             }
-
         }
         pruef_size--;
     } while (pruef_size >= 0);
