@@ -1,0 +1,75 @@
+main {
+    margin-top: 50px;
+    #button {
+        width: 100%;
+        height: 38px;
+        background-color: #82e382;
+        border: none;
+        cursor: pointer;
+        transition: all 300ms ease;
+        &:hover {
+            background-color: #abe4ab;
+        }
+    }
+    #output {
+        .license_plate {
+            display: inline-block;
+            height: 50px;
+            border: solid grey 2px;
+            border-radius: 5px;
+            margin: 0 auto;
+            overflow: hidden;
+            margin: 0 10px 0 0;
+            animation: mymove 500ms;
+
+            .country {
+                width: 55px;
+                height: 100%;
+                background-color: #003399;
+                color: #FFFFFF;
+                font-weight: bold;
+                text-align: center;
+                position: relative;
+
+                i {
+                    margin-top: 4px;
+                }
+
+                &_code {
+                    position: absolute;
+                    bottom: 5px;
+                    left: 0;
+                    right: 0;
+                }
+            }
+
+            .left,
+            .middle,
+            .right {
+                font-size: 36px;
+                margin: 0 5px;
+                font-weight: 600;
+                font-family: sans-serif;
+            }
+
+            * {
+                display: inline-block;
+                vertical-align: top;
+            }
+            &.red {
+                color: red;
+            }
+        }
+    }
+}
+
+@keyframes mymove {
+    from {
+        transform: translateY(50px);
+        opacity:0;
+    }
+    to {
+        transform: translateY(0);
+        opacity:1;
+    }
+}
